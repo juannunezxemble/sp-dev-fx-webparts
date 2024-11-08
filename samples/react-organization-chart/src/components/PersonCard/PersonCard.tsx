@@ -148,9 +148,10 @@ export const PersonCard: React.FunctionComponent<IPersonCardProps> = (
               <Person
                 text={userInfo.displayName}
                 secondaryText={userInfo.title}
+                tertiaryText={userInfo.office}
                 userEmail={userInfo.email}
                 pictureUrl={userInfo.pictureUrl}
-                size={PersonaSize.size40}
+                size={PersonaSize.size72}
               />
             </Stack>
           </DocumentCardDetails>

@@ -51,7 +51,6 @@ return Promise.resolve();
   protected onDispose(): void {
     ReactDom.unmountComponentAtNode(this.domElement);
   }
-
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }

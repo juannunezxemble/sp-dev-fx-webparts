@@ -3,6 +3,7 @@ import { IReactNewsWebpartProps } from './IReactNewsWebpartProps';
 import { IReactNewsWebpartState } from './IReactNewsWebpartState';
 import SingleStyle from './SingleStyle';
 import StackStyle from './StackStyle';
+import HeroStyle from './HeroStyle';
 import spservices from './Service/SPServices';
 
 export default class ReactNewsWebpart extends React.Component<IReactNewsWebpartProps, IReactNewsWebpartState> {
@@ -98,9 +99,8 @@ export default class ReactNewsWebpart extends React.Component<IReactNewsWebpartP
   public render(): React.ReactElement<IReactNewsWebpartProps> {
       return <div style={{ height: '100%', width: '100%' }}>
       {/*<button style={{boxShadow: 'rgb(0 0 0 / 16%) 0px 1px 4px, rgb(0 0 0 / 10%) 0px 0px 40px', border: 'none', marginBottom: '7px', padding: '4px 14px'}} onClick={() => this.Click()}>Reload</button>*/}
-      {this.props.StyleToggle ?
-      <StackStyle News={this.state.News} AuthorToggle={this.props.AuthorToggle} Reload={this.state.Reload}></StackStyle> :
-      <SingleStyle News={this.state.News} AuthorToggle={this.props.AuthorToggle} Reload={this.state.Reload}></SingleStyle>}
+      {
+      <HeroStyle News={this.state.News} AuthorToggle={this.props.AuthorToggle} Reload={this.state.Reload}></HeroStyle>}
     </div>;
   }
 }

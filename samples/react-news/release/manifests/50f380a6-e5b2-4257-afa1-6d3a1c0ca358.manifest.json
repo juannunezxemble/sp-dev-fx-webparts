@@ -15,14 +15,14 @@
         "default": "Other"
       },
       "title": {
-        "default": "React-News-Webpart"
+        "default": "Custom Hero News Webpart"
       },
       "description": {
         "default": "React-News-Webpart description"
       },
       "officeFabricIconFontName": "News",
       "properties": {
-        "description": "React-News-Webpart"
+        "description": "Custom Hero News Webpart"
       }
     }
   ],

@@ -116,7 +116,52 @@ export const ExpandedCard: React.FunctionComponent<IExpandedCardProps> = (
             </Stack>
           </>
         )}
+        {
+          user.skills && (<>
+            <Stack
+              horizontal
+              horizontalAlign="start"
+              verticalAlign="center"
+              tokens={stackFieldTokens}
+              styles={{ root: { padding: 5 } }}
+            >
 
+              <Text>
+                {user.skills}
+              </Text>
+            </Stack>
+          </>)
+        }
+        {
+          user.certifications && (<>
+            <Stack
+              horizontal
+              horizontalAlign="start"
+              verticalAlign="center"
+              tokens={stackFieldTokens}
+              styles={{ root: { padding: 5 } }}
+            >
+
+              <Text>
+                {user.certifications}
+              </Text>
+            </Stack>
+          </>)
+        }
+        {
+          user.socialnetwork && (<>
+            <Stack
+              horizontal
+              horizontalAlign="start"
+              verticalAlign="center"
+              tokens={stackFieldTokens}
+              styles={{ root: { padding: 5 } }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: user.socialnetwork }} />
+         
+            </Stack>
+          </>)
+        }
         {manager && (
           <>
             <Text

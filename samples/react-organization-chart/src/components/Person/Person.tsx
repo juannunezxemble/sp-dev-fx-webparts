@@ -41,18 +41,33 @@ export const Person: React.FunctionComponent<IPersonProps> = (
     return (
       <>
         <Text
-          title={secondaryText}
+          title={secondaryText + " - " + tertiaryText}
           variant="smallPlus"
           block
           nowrap
           styles={{ root: { fontWeight: 400 } }}
         >
-          {secondaryText}
+          {secondaryText + " - " + tertiaryText}
         </Text>
       </>
     );
-  }, [secondaryText]);
+  }, [secondaryText, tertiaryText]);
 
+  const _onRenderTertiaryText = React.useCallback(() => {
+    return (
+      <>
+        <Text
+          title={tertiaryText}
+          variant="smallPlus"
+          block
+          nowrap
+          styles={{ root: { fontWeight: 400 } }}
+        >
+          {tertiaryText}
+        </Text>
+      </>
+    );
+  }, [tertiaryText]);
 
 
   return (
@@ -62,6 +77,7 @@ export const Person: React.FunctionComponent<IPersonProps> = (
         size={size || PersonaSize.size40}
         onRenderPrimaryText={_onRenderPrimaryText}
         onRenderSecondaryText={_onRenderSecondaryText}
+        onRenderTertiaryText={_onRenderTertiaryText}
         styles={{
           secondaryText: { maxWidth: 230 },
           primaryText: { maxWidth: 230 },

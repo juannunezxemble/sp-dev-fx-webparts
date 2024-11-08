@@ -17,11 +17,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "React-News-Webpart" },
+    "title": { "default": "Custom Hero News Webpart" },
     "description": { "default": "React-News-Webpart description" },
     "officeFabricIconFontName": "News",
     "properties": {
-      "description": "React-News-Webpart"
+      "description": "Custom Hero News Webpart"
     }
   }]
 }

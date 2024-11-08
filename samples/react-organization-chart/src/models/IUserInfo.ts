@@ -16,5 +16,7 @@ export interface IUserInfo extends  IUser {
   cellPhone?:string;
   location?:string;
   office?: string;
-
+  skills?: string;
+  certifications?: string;
+  socialnetwork?: string;
  }

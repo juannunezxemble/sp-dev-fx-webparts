@@ -15,4 +15,7 @@ export interface IPersonProperties {
   UserProfileProperties: { Key: string; Value: string; ValueType: string }[];
   UserUrl: string;
   loginName: string;
+  Skills: string[];
+  Certifications: any[];
+  SocialNetwork: string[];
 }

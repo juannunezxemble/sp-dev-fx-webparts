@@ -66,7 +66,6 @@ export const loadSPComponentById = async (
  * @returns image base64
  */
 export const getImageBase64 = async (pictureUrl: string): Promise<string> => {
-  console.log(pictureUrl);
   return new Promise((resolve) => {
     const image = new Image();
     image.addEventListener("load", () => {

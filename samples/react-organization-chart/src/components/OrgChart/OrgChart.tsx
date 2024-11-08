@@ -266,7 +266,6 @@ export const OrgChart: React.FunctionComponent<IOrgChartProps> = (
       </Stack>
     );
   }
-
   return (
     <>
       <Stack  styles={{root:{padding: 20}}} >

@@ -45,27 +45,7 @@ export default class ReactNewsWebpart extends BaseClientSideWebPart <IReactNewsW
   public  async onInit(): Promise<void> {
     return Promise.resolve();
   }
-/*
-  protected async onPropertyPaneFieldChanged(
-    propertyPath: string,
-    oldValue: unknown,
-    newValue: unknown
-  ):Promise<void> {
-   
-    if (propertyPath === "sites") {
 
-       const value:IPropertyFieldSite[] = newValue as IPropertyFieldSite[];
-       if (value  && !value.length) {
-        this.context.propertyPane.refresh();
-        
-        this.render()
-        return;
-      } else {
-        this.context.propertyPane.refresh();
-      
-      }
-    }
-  }*/
   protected async onPropertyPaneFieldChanged(
     propertyPath: string,
     oldValue: unknown,
@@ -109,16 +89,6 @@ export default class ReactNewsWebpart extends BaseClientSideWebPart <IReactNewsW
           groups: [
             {
               groupFields: [
-                PropertyPaneToggle('StyleToggle', {
-                  onText: 'Stack',
-                  offText: 'Single',
-                  label: 'Style'
-                }),
-                PropertyPaneToggle('AuthorToggle', {
-                  onText: 'Hidden',
-                  offText: 'Shown',
-                  label: 'Author'
-                }),
                 PropertyFieldSitePicker('sites', {
                   label: 'Select sites',
                   initialSites: this.properties.sites,

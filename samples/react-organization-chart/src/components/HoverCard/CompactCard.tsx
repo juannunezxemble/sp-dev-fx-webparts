@@ -21,7 +21,6 @@ export const CompactCard: React.FunctionComponent<ICompactCardProps> = (
     buttonStylesHouver,
     documentCardActionStyles
   } = useHoverCardStyles();
-
   const documentCardActionsHouver: IButtonProps[] = React.useMemo(() =>{
     const actions:IButtonProps[] = [] ;
     actions.push(

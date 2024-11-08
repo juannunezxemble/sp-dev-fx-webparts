@@ -17,7 +17,7 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
       News: [],
       RenderedNews: [],
       UpdateCount: 0,
-      Next: 3,
+      Next: 4,
       Count: 1,
       Reload: true
     };
@@ -26,21 +26,21 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
     var array = [];
     var count = 0;
     var min = this.state.Next;
-    var max = min + 4;
+    var max = min + 5;
     News.map(Post => {
       count = count + 1;
       if (count > min && count < max) {
         array.push(Post);
       }
     });
-    var newVal = this.state.Next + 3;
+    var newVal = this.state.Next + 4;
     this.setState({ RenderedNews: array, Next: newVal, Count: this.state.Count + 1 });
   }
 
   public Back(News) {
     var array = [];
     var max, min;
-    min = this.state.Next - 6;
+    min = this.state.Next - 7;
     max = this.state.Next - 2;
     var count = 0;
     News.map((Post) => {
@@ -49,7 +49,7 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
         array.push(Post);
       }
     });
-    var newVal = this.state.Next - 3;
+    var newVal = this.state.Next - 4;
     this.setState({ RenderedNews: array, Next: newVal, Count: this.state.Count - 1 });
   }
   
@@ -57,20 +57,20 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
     var array = [];
     var count = 0;
     var min = 0;
-    var max = min + 4;
+    var max = min + 5;
     this.props.News.map(Post => {
       count = count + 1;
       if (count > min && count < max) {
         array.push(Post);
       }
     });
-    this.setState({ RenderedNews: array, Next: 3, Count: 1, UpdateCount: 0 });
+    this.setState({ RenderedNews: array, Next: 4, Count: 1, UpdateCount: 0 });
   }
   public componentDidUpdate(prevProps: StylingProps) {
     var array = [];
     var count = 0;
     var min = 0;
-    var max = min + 4;
+    var max = min + 5;
     if (prevProps.News !== this.props.News) {
 
       this.props.News.map(Post => {
@@ -79,17 +79,17 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
           array.push(Post);
         }
       });
-      this.setState({ RenderedNews: array, Next: 3, Count: 1, UpdateCount: 0 });
+      this.setState({ RenderedNews: array, Next: 4, Count: 1, UpdateCount: 0 });
       return true;
     }
-    else if (this.props.News.length > 0 && this.props.News.length > this.state.RenderedNews.length && this.state.UpdateCount < 4) {
+    else if (this.props.News.length > 0 && this.props.News.length > this.state.RenderedNews.length && this.state.UpdateCount < 5) {
       this.props.News.map(Post => {
         count = count + 1;
         if (count > min && count < max) {
           array.push(Post);
         }
       });
-      this.setState({ RenderedNews: array, Next: 3, Count: 1, UpdateCount: this.state.UpdateCount + 1 });
+      this.setState({ RenderedNews: array, Next: 4, Count: 1, UpdateCount: this.state.UpdateCount + 1 });
       return true;
     }
   }
@@ -106,6 +106,9 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
       case 3:
         Height = '624px';
         break;
+        case 4:
+          Height = '813px';
+          break;
     }
     return (<div className={styles.SingleStyle}>
       <div className={styles.SingleStyleContainer} style={{ height: Height }}>
@@ -136,7 +139,7 @@ export default class StackStyle extends React.Component<StylingProps, StylingSta
         })}</div>
         <div className={styles.NavigationContainer} >
           <button
-            disabled={this.state.Next === 3}
+            disabled={this.state.Next === 4}
             style={{ boxShadow: '0 1px 4px rgb(0 0 0 / 30%), 0 0 40px rgb(0 0 0 / 10%)' }}
             className={styles.NavigationLeftButtonStyling}
             onClick={() => this.Back(this.props.News)}>Back</button>
